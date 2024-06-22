@@ -1,0 +1,273 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    background-image: url("starry bg.png");
+    min-height: 100vh;
+    height: 150vh;
+    overflow-y: scroll;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+/* card */  #birthdayCard {
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 2s;
+  }
+  
+  #birthdayCard img {
+    width: 40%;
+    height: auto;
+  }
+
+#birthdayCard.hover {
+  transform: perspective(2500px) rotate(-5deg);
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2),
+              0 10px 100px rgba(0,0,0,0.5);
+}
+
+#birthdayCard.hover .cardFront , #birthdayCard.hover .cardBack {
+  transform: rotateY(-160deg);
+}
+
+.cardFront {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2), 
+              30px 0 50px rgba(0,0,0,0.4);
+  transition: 0.6s;
+}
+
+.cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+  transform-origin: left;
+  transition: 0.6s;
+}
+
+.cardInside {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+/* other elements */
+
+img.moon{
+  width:35vw;
+  height: auto;
+  position: absolute;
+  bottom: 55vh;
+  right:70vw;
+}
+
+img.astraunaut{
+  width: auto;
+  height: 85vh;
+  position: fixed;
+  top: -150vh;
+  left:75%;
+  z-index: 10;
+}
+
+img.animate-astronomer{
+  transform: translateX(-50%);
+  transition: top 3.5s ease-in-out;
+  animation:rotationAndTransition 2s ease-in-out 1s infinite;
+}
+
+/* _____Card Animations_____ */
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-25px);
+  }
+}
+
+@keyframes rotationAndTransition {
+  0%, 100%{
+    transform: translateX(-50%) rotate(8deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-8deg);
+  }
+}
+
+
+@keyframes scrollDownAnimation {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8%);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0); 
+  }
+}
+
+/* ______Responsivenss______ */
+
+@media only screen 
+  and (device-width: 768px) 
+  and (device-height: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    img.moon{
+      width: auto;
+      height: 55vh;
+      bottom: 62vh;
+      right:52vw;
+    }
+  
+    img.astraunaut{
+      width: auto;
+      height: 50vh;
+      left:80%;
+    }
+  
+    #birthdayCard {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      width: auto;
+      height: auto;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transform: perspective(2500px);
+      transition: 2s;
+    }
+    
+    #birthdayCard img {
+      width: 55%;
+      height: auto;
+    }
+}
+
+@media (max-width: 1052px){
+  img.moon{
+    width: auto;
+    height: 70vh;
+    bottom: 55vh;
+    right:60vw;
+  }
+
+  img.astraunaut{
+    width: auto;
+    height: 70vh;
+    left:80%;
+  }
+
+  #birthdayCard {
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 2s;
+  }
+  
+  #birthdayCard img {
+    width: 38%;
+    height: auto;
+  }
+
+}
+
+@media (max-width: 780px){
+  img.moon{
+    width: auto;
+    height: 55vh;
+    bottom: 62vh;
+    right:52vw;
+  }
+
+  img.astraunaut{
+    width: auto;
+    height: 50vh;
+    left:80%;
+  }
+
+  #birthdayCard {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 2s;
+  }
+  
+  #birthdayCard img {
+    width: 55%;
+    height: auto;
+  }
+
+}
+
+@media (max-width: 400px){
+  img.moon{
+    width: auto;
+    height: 55vh;
+    bottom: 65vh;
+    right:35vw;
+  }
+
+  img.astraunaut{
+    width: auto;
+    height: 40vh;
+    left:75%;
+  }
+
+  #birthdayCard {
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 2s;
+  }
+  
+  #birthdayCard img {
+    width: 53%;
+    height: auto;
+  }
+
+}
