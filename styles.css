@@ -21,7 +21,8 @@ body{
     justify-content: center; */
 }
 
-/* card */  #birthdayCard {
+/* card */  
+#birthdayCard {
     position: absolute;
     top: 45%;
     left: 35%;
@@ -34,7 +35,7 @@ body{
   }
   
   #birthdayCard img {
-    width: 40%;
+    width: 80%;
     height: auto;
   }
 
@@ -171,6 +172,39 @@ img.animate-astronomer{
       width: 55%;
       height: auto;
     }
+}
+
+@media (max-width: 1280px){
+  img.moon{
+    width:35vw;
+    height: auto;
+    position: absolute;
+    bottom: 55vh;
+    right:70vw;
+  }
+
+  img.astraunaut{
+    width: auto;
+    height: 85vh;
+    left:75%;
+  }
+
+  #birthdayCard {
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 2s;
+  }
+  
+  #birthdayCard img {
+    width: 38%;
+    height: auto;
+  }
 }
 
 @media (max-width: 1052px){
